@@ -21,6 +21,11 @@ Prequisites, build, and run instructions are the same as in **FAST-LIO** and the
 ## Real-World Applications
 The vehicle must remain static until the map is loaded and the pose initialization is finished. Once the initialization is finished the ros parameter "start_mission" is set to true.
 
+## Exclusive Localization
+<div align="left">
+<img src="doc/localization_git (2).gif" 
+</div>
+
 ## FAST-LIO
 **FAST-LIO** (Fast LiDAR-Inertial Odometry) is a computationally efficient and robust LiDAR-inertial odometry package. It fuses LiDAR feature points with IMU data using a tightly-coupled iterated extended Kalman filter to allow robust navigation in fast-motion, noisy or cluttered environments where degeneration occurs. Our package address many key issues:
 1. Fast iterated Kalman filter for odometry optimization;
