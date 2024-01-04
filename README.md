@@ -1,5 +1,5 @@
 ## FAST-LIO-LOCALIZATION
-This is an extended version of **FAST-LIO** aiming to robust localization on pre-build point cloud maps. The system is based on a hybrid scheme which gives the ability to the user not only to localize on a pre-built map, but concurrently perform SLAM to explore unknown scenes, and build extended maps algined to the initial pre-build map.
+This is an extended version of **FAST-LIO** aiming to robust localization in pre-build point cloud maps. The system is based on a hybrid scheme which gives the ability to the user not only to localize in a pre-built map, but concurrently perform SLAM to explore unknown scenes, and build extended maps algined to the initial pre-build map.
 
 **Contributors**
 
