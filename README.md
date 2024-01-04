@@ -12,7 +12,7 @@ This is an extended version of **FAST-LIO** aiming to robust localization on pre
 4. Improved memory allocation regarding lidar and imu data.
 
 ## Prequisites, Build, and Run
-Prequisites, build, and run instructions are the same as in **FAST-LIO** and there are just three new parameters on the yaml files for the user.
+Prequisites, build, and run instructions are the same as in **FAST-LIO** and there are just three new parameters in the yaml files for the user.
 
 1. path_pcd: The local path of the pre-built map (.pcd format).
 2. update_tree_frame: Lidar frame after which the map tree will start to be updated with new lidar data (set -1 for exclusive localization).
