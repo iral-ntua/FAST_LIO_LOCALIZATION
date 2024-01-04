@@ -1,6 +1,10 @@
 ## FAST-LIO-LOCALIZATION
 This is an extended version of **FAST-LIO** aiming to robust localization on pre-build point cloud maps. The system is based on a hybrid scheme which gives the ability to the user not only to localize on a pre-built map, but concurrently perform SLAM to explore unknown scenes, and build extended maps algined to the initial pre-build map.
 
+**Contributors**
+
+[Ioannis Alamanos](https://github.com/Giannis-Alamanos).
+
 ## Added Features:
 1. Robust localization on pre-built maps based on the framework of **FAST-LIO**.
 2. Pose initialization within the known map using an initial guess and ICP.
@@ -15,7 +19,7 @@ Prequisites, build, and run instructions are the same as in **FAST-LIO** and the
 3. approximate_init_pose: Initial guess of starting pose according to the frame of the initial map (it needs to be realatively close to the actual pose so that the icp converges to a precise solution).
 
 ## Real-World Applications
-The vehicle must remain static until the map is loaded and the pose initialization is finished. Once the initialization is finished the ros parameter start_mission is set to true.
+The vehicle must remain static until the map is loaded and the pose initialization is finished. Once the initialization is finished the ros parameter "start_mission" is set to true.
 
 ## FAST-LIO
 **FAST-LIO** (Fast LiDAR-Inertial Odometry) is a computationally efficient and robust LiDAR-inertial odometry package. It fuses LiDAR feature points with IMU data using a tightly-coupled iterated extended Kalman filter to allow robust navigation in fast-motion, noisy or cluttered environments where degeneration occurs. Our package address many key issues:
