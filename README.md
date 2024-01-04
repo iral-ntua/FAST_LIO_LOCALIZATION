@@ -1,20 +1,25 @@
-## Related Works and Extended Application
+## FAST-LIO-LOCALIZATION
+This is an extended version of **FAST-LIO** aiming to robust localization in pre-build point cloud maps. The system is based on a hybrid scheme which gives the ability to the user not only to localize in a pre-built map, but concurrently perform SLAM to explore unknown scenes, and build extended maps algined to the initial pre-build map.
 
-**SLAM:**
+**Contributors**
 
-1. [ikd-Tree](https://github.com/hku-mars/ikd-Tree): A state-of-art dynamic KD-Tree for 3D kNN search.
-2. [R2LIVE](https://github.com/hku-mars/r2live): A high-precision LiDAR-inertial-Vision fusion work using FAST-LIO as LiDAR-inertial front-end.
-3. [LI_Init](https://github.com/hku-mars/LiDAR_IMU_Init): A robust, real-time LiDAR-IMU extrinsic initialization and synchronization package..
-4. [FAST-LIO-LOCALIZATION](https://github.com/HViktorTsoi/FAST_LIO_LOCALIZATION): The integration of FAST-LIO with **Re-localization** function module.
+[Ioannis Alamanos](https://github.com/Giannis-Alamanos).
 
-**Control and Plan:**
+## Added Features:
+1. Robust localization on pre-built maps based on the framework of **FAST-LIO**.
+2. Pose initialization within the known map using an initial guess and ICP.
+3. Publish complete odometry messages for real-world applications.
+4. Improved memory allocation regarding lidar and imu data.
 
-1. [IKFOM](https://github.com/hku-mars/IKFoM): A Toolbox for fast and high-precision on-manifold Kalman filter.
-2. [UAV Avoiding Dynamic Obstacles](https://github.com/hku-mars/dyn_small_obs_avoidance): One of the implementation of FAST-LIO in robot's planning.
-3. [UGV Demo](https://www.youtube.com/watch?v=wikgrQbE6Cs): Model Predictive Control for Trajectory Tracking on Differentiable Manifolds.
-4. [Bubble Planner](https://arxiv.org/abs/2202.12177): Planning High-speed Smooth Quadrotor Trajectories using Receding Corridors.
+## Prequisites, Build, and Run
+Prequisites, build, and run instructions are the same as in **FAST-LIO** and there are just three new parameters in the yaml files for the user.
 
-<!-- 10. [**FAST-LIVO**](https://github.com/hku-mars/FAST-LIVO): Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry. -->
+1. path_pcd: The local path of the pre-built map (.pcd format).
+2. update_tree_frame: Lidar frame after which the map tree will start to be updated with new lidar data (set -1 for exclusive localization).
+3. approximate_init_pose: Initial guess of starting pose according to the frame of the initial map (it needs to be realatively close to the actual pose so that the icp converges to a precise solution).
+
+## Real-World Applications
+The vehicle must remain static until the map is loaded and the pose initialization is finished. Once the initialization is finished the ros parameter "start_mission" is set to true.
 
 ## FAST-LIO
 **FAST-LIO** (Fast LiDAR-Inertial Odometry) is a computationally efficient and robust LiDAR-inertial odometry package. It fuses LiDAR feature points with IMU data using a tightly-coupled iterated extended Kalman filter to allow robust navigation in fast-motion, noisy or cluttered environments where degeneration occurs. Our package address many key issues:
