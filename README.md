@@ -21,12 +21,13 @@ Prequisites, build, and run instructions are the same as in **FAST-LIO** and the
 ## Real-World Applications
 The vehicle must remain static until the map is loaded and the pose initialization is finished. Once the initialization is finished the ros parameter "start_mission" is set to true.
 
-## Exclusive Localization
+## Examples
+**Exclusive Localization Example**
 <div align="left">
 <img src="doc/Loc_git.gif" 
 </div>
 
-## Hybrid
+**Hybrid Example**
 <div align="left">
 <img src="doc/Loc_git_hyb.gif" 
 </div>
