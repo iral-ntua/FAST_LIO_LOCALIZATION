@@ -32,6 +32,9 @@ The vehicle must remain static until the map is loaded and the pose initializati
 <img src="doc/Loc_git_hyb.gif" 
 </div>
 
+## Acknowledgments
+Thanks for the authors of [FAST-LIO](https://github.com/hku-mars/FAST_LIO).
+
 ## FAST-LIO
 **FAST-LIO** (Fast LiDAR-Inertial Odometry) is a computationally efficient and robust LiDAR-inertial odometry package. It fuses LiDAR feature points with IMU data using a tightly-coupled iterated extended Kalman filter to allow robust navigation in fast-motion, noisy or cluttered environments where degeneration occurs. Our package address many key issues:
 1. Fast iterated Kalman filter for odometry optimization;
