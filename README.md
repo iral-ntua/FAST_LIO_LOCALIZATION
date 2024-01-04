@@ -23,7 +23,7 @@ The vehicle must remain static until the map is loaded and the pose initializati
 
 ## Exclusive Localization
 <div align="left">
-<img src="doc/Loc_git_.gif" 
+<img src="doc/Loc_git.gif" 
 </div>
 
 ## FAST-LIO
