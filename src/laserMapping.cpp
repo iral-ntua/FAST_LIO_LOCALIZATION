@@ -920,6 +920,7 @@ int main(int argc, char** argv)
             sensor_msgs::PointCloud2 laserCloudmsg_map;
             pcl::toROSMsg(*initial_map, laserCloudmsg_map);
             laserCloudmsg_map.header.frame_id = "camera_init";
+            sleep(2);
             pubLaserCloudFull.publish(laserCloudmsg_map);
 
             ikdtree.set_downsample_param(filter_size_map_min);
