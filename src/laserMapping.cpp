@@ -368,11 +368,6 @@ void imu_cbk(const sensor_msgs::Imu::ConstPtr &msg_in)
 
     last_timestamp_imu = timestamp;
 
-    msg->linear_acceleration.x = - msg->linear_acceleration.x;
-    msg->linear_acceleration.y = - msg->linear_acceleration.y;
-    msg->angular_velocity.x = - msg->angular_velocity.x;
-    msg->angular_velocity.y = - msg->angular_velocity.y;
-
     imu_buffer.push_back(msg);
     mtx_buffer.unlock();
     sig_buffer.notify_all();
