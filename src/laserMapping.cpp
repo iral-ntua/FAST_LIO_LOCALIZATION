@@ -886,7 +886,7 @@ int main(int argc, char** argv)
     ros::Subscriber sub_pcl = p_pre->lidar_type == AVIA ? \
         nh.subscribe(lid_topic, 10, livox_pcl_cbk) : \
         nh.subscribe(lid_topic, 10, standard_pcl_cbk);
-    ros::Subscriber sub_imu = nh.subscribe(imu_topic, 10, imu_cbk);
+    ros::Subscriber sub_imu = nh.subscribe(imu_topic, 200, imu_cbk);
     ros::Publisher pubLaserCloudFull = nh.advertise<sensor_msgs::PointCloud2>
             ("/cloud_registered", 100000);
     ros::Publisher pubLaserCloudFull_body = nh.advertise<sensor_msgs::PointCloud2>
