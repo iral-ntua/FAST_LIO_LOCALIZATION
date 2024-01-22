@@ -1015,9 +1015,9 @@ int main(int argc, char** argv)
                 state_point.rot = initialization_rot;
                 state_point.pos = state_point.pos + initialization_tf.block<3, 1>(0, 3).cast<double>();
                 kf.change_x(state_point);
-                lidar_buffer.clear();
+                /*lidar_buffer.clear();
                 time_buffer.clear();
-                imu_buffer.clear();
+                imu_buffer.clear();*/
                 ros::param::set("start_mission", true);
             }
 
