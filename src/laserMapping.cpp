@@ -48,6 +48,7 @@
 #include <nav_msgs/Path.h>
 #include <visualization_msgs/Marker.h>
 #include <pcl_conversions/pcl_conversions.h>
+#include <pcl/filters/uniform_sampling.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/filters/voxel_grid.h>
@@ -916,6 +917,12 @@ int main(int argc, char** argv)
             {
             cout << "Lidar cloud reading failed." << endl;
             }  
+
+            // Uniform downsampling
+            pcl::UniformSampling<pcl::PointXYZINormal> downsample;
+            downsample.setInputCloud(initial_map);
+            downsample.setRadiusSearch(0.01);
+            downsample.filter(*initial_map); 
 
             sensor_msgs::PointCloud2 laserCloudmsg_map;
             pcl::toROSMsg(*initial_map, laserCloudmsg_map);
